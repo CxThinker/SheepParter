@@ -19,6 +19,7 @@
   display: grid;
   align-content: start;
   gap: 14px;
+  overflow: visible;
 }
 
 .mode-rail__header {
@@ -57,20 +58,28 @@
 .mode-list {
   display: grid;
   gap: 10px;
+  padding: 6px 5%;
 }
 
 .mode-card {
+  position: relative;
   display: grid;
   grid-template-columns: 34px minmax(0, 1fr);
   gap: 10px;
   min-height: 58px;
   align-items: center;
   padding: 10px;
+  opacity: 0.4;
   text-align: left;
+  transform-origin: center;
+  transition: opacity 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  will-change: opacity, transform;
 }
 
 .mode-card.is-active {
+  z-index: 2;
   border-color: var(--orange);
+  opacity: 1;
   box-shadow: inset 0 0 18px rgba(255, 155, 47, 0.12), 0 0 20px rgba(255, 155, 47, 0.16);
 }
 
@@ -101,6 +110,7 @@
   grid-template-columns: 34px;
   justify-content: center;
   padding: 10px;
+  transform-origin: center;
 }
 
 .start-stage {
@@ -148,4 +158,10 @@
 .mode-rail__toggle:hover,
 .mode-card:hover {
   animation: neon-border-flicker 2s linear infinite;
+}
+
+.mode-card:hover {
+  z-index: 3;
+  opacity: 0.8;
+  transform: scale(1.1);
 }
