@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["react"],
+    "composite": true
+  },
+  "include": ["src"]
+}

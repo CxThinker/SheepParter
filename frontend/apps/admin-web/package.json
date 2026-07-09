@@ -1,0 +1,19 @@
+{
+  "name": "@sheepparter/admin-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5174",
+    "build": "tsc -p tsconfig.app.json && vite build",
+    "preview": "vite preview --port 4174",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit"
+  },
+  "dependencies": {
+    "@sheepparter/api-client": "*",
+    "@sheepparter/ui": "*",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  }
+}
